@@ -1,0 +1,16 @@
+spin_version = "1"
+authors = ["Mikkel Mørk Hegnhøj <mikkel@fermyon.com>"]
+description = "My KV store"
+name = "kv-store"
+trigger = { type = "http", base = "/" }
+version = "0.1.0"
+
+[[component]]
+id = "kv-store"
+source = "target/spin-http-js.wasm"
+exclude_files = ["**/node_modules"]
+key_value_stores = ["default"]
+[component.trigger]
+route = "/..."
+[component.build]
+command = "npm run build"
